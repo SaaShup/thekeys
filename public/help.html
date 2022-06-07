@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Keys</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+</head>
+<body>
+    <div align="right" style="width:80%;"><a href="/index.html">app</a></div>
+    <center style="margin: auto;width: 100%; font-size: 32px;"> <a target="_blank" href="https://www.the-keys.eu/en/">TheKeys</a> Locker </center><br>
+    <div style="margin: auto;width: 80%;">
+      <p><a target="_blank" src="https://www.the-keys.eu/en/">TheKeys</a> is a digital locker provider.<br></p>
+      <p>You need to 2 components to use this application : the locker itself and a gateway.<br>
+      Setting up both devices is easy and is documented on <a target="_blank" href="https://www.the-keys.eu/en/">TheKeys</a> website.<br></p>
+      <p>Unfortunatly I was missing one very important feature to me : open and close mydoor using my favorite assistant.<br>
+      In my case, I am using google but I guess a similar way of doing it is possible for other assistant.<br></p>
+      <p>To setup your <a target="_blank" href="https://www.the-keys.eu/en/">TheKeys</a> locker there is 3 steps to carry on :<br>
+      <p><b>1. Provide internet access to your gateway:</b><br><br>
+      First get your internal ip (192.168.X.X most probably), make it static on your dhcp configuration and create a rule on your box provider or firewall.<br>
+      You need to port forward an internet port to the gateway device on port 80.<br>
+      Check the device is accessible from internet by a simple http call (http://1.1.1.1:1111 for instance).<br><br>
+      The following page should retun : <br>
+      <center><img src="/imgs/help-status.png"></img></center></p>
+      <p><b>2. Configure the application:</b><br><br>
+        To configure the application, you need 3 settings :<br><br>
+        - ip address and port you have setup on step 1. Exemple: 1.1.1.1:1111<br>
+        - locker id<br>
+        - gateway code<br><br>
+        For the id and code, the easiest way to get it, is to go to <a target="_blank" href="https://api.the-keys.fr/">TheKeys api website</a>.<br>
+        <p>Login to the portal with your credentials : <br><br>
+        <center><img src="/imgs/help-login.png"></img></center></p><br>
+        <p>Go to your locker details and get the id (<b>ID locker</b> : "1111" in the screenshot): <br><br>
+        <center><img src="/imgs/help-locker.png"></img></center></p><br>
+        <p>Go to your locker share, select the gateway share and find the code (<b>Code</b> : "thisCode" in the screenshot): <br><br>
+        <center><img src="/imgs/help-share.png"></img></center></p><br>
+        <p>you can now test your setup is working (you can test with <b>locker status</b>): <br><br>
+        <center><img src="/imgs/help-app.png"></img></center></p><br>
+        <p>you should get the following result: <br><br>
+        <center><img src="/imgs/help-result.png"></img></center></p><br>
+      </p>
+      <p>
+        <p><b>3. Use IFTTT:</b><br><br>
+        To use my assistant I am using <a target="_blank" href="https://ifttt.com/">IFTTT</a><br><br>
+        You can now configure a simple webhook call to activate your locker on demand.<br>
+        <p>I have created a simple google assitant task to react on "open the door" : <br><br>
+          <center><img src="/imgs/help-phrase.png"></img></center></p><br>
+          <p>Then I make a call to the application with the settings from step2 : <br><br>
+          <center><img src="/imgs/help-webhook.png"></img></center></p><br>
+      </p>
+      <p>Here you go. You can now request your assistant to open the door. You can make duplicate it to close the door and create any scenarios you may like.</p>
+      <p>Enjoy !</p>
+    </div>
+    <footer>
+      <center><a href="mailto:lav@yoctu.com">lav</a></center>
+    </footer>
+</body>
+</html>
+
